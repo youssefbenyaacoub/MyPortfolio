@@ -8,10 +8,6 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
-        },
-        {
-          "key": "Content-Encoding",
-          "value": "gzip"
         }
       ]
     },
@@ -21,10 +17,6 @@
         {
           "key": "Cache-Control",
           "value": "public, max-age=31536000, immutable"
-        },
-        {
-          "key": "Content-Encoding",
-          "value": "gzip"
         },
         {
           "key": "Content-Type",
@@ -40,14 +32,22 @@
           "value": "public, max-age=31536000, immutable"
         },
         {
-          "key": "Content-Encoding",
-          "value": "gzip"
-        },
-        {
           "key": "Content-Type",
           "value": "text/css; charset=utf-8"
         }
       ]
+    },
+    {
+      "source": "/index.html",
+      "headers": [
+        {
+          "key": "Cache-Control",
+          "value": "public, max-age=0, must-revalidate"
+        }
+      ]
+    }
+  ]
+}
     },
     {
       "source": "/(.*)\\.woff2",
