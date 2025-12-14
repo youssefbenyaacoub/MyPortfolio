@@ -1,55 +1,15 @@
 const ParallaxBackground = () => {
   return (
-    <section className="absolute inset-0" style={{ backgroundColor: "#030412" }}>
-      <div className="relative h-screen overflow-y-hidden">
-        {/* Background Sky */}
-        <div
-          className="absolute inset-0 w-full h-screen -z-50"
-          style={{
-            backgroundImage: "url(/assets/sky.jpg)",
-            backgroundPosition: "bottom",
-            backgroundSize: "cover",
-            backgroundColor: "#0f0f1e",
-          }}
-        />
-        {/* Mountain Layer 3 */}
-        <div
-          className="absolute inset-0 -z-40"
-          style={{
-            backgroundImage: "url(/assets/mountain-3.png)",
-            backgroundPosition: "bottom",
-            backgroundSize: "cover",
-          }}
-        />
-        {/* Planets */}
-        <div
-          className="absolute inset-0 -z-30"
-          style={{
-            backgroundImage: "url(/assets/planets.png)",
-            backgroundPosition: "bottom",
-            backgroundSize: "cover",
-          }}
-        />
-        {/* Mountain Layer 2 */}
-        <div
-          className="absolute inset-0 -z-20"
-          style={{
-            backgroundImage: "url(/assets/mountain-2.png)",
-            backgroundPosition: "bottom",
-            backgroundSize: "cover",
-          }}
-        />
-        {/* Mountaine Layer 1 */}
-        <div
-          className="absolute inset-0 -z-10"
-          style={{
-            backgroundImage: "url(/assets/mountain-1.png)",
-            backgroundPosition: "bottom",
-            backgroundSize: "cover",
-          }}
-        />
-      </div>
-    </section>
+    <section 
+      className="absolute inset-0" 
+      style={{
+        backgroundImage: "url(/assets/space.png)",
+        backgroundPosition: "center",
+        backgroundSize: "cover",
+        backgroundAttachment: "fixed",
+        backgroundColor: "#000000",
+      }}
+    />
   );
 };
 
