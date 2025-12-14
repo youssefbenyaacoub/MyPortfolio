@@ -10,13 +10,23 @@ const Footer = () => {
       </div>
       <div className="flex gap-3">
         {mySocials.map((social, index) => (
-          <a href={social.href} key={index}>
+          <a href={social.href} key={index} target="_blank" rel="noopener noreferrer">
             <img src={social.icon} className="w-5 h-5" alt={social.name} />
           </a>
         ))}
       </div>
-      <p>© 2025 Ali. All rights reserved.</p>
+      <p>© 2025 Youssef. All rights reserved.</p>
+         <a
+      href="http://www.freepik.com"
+      target="_blank"
+      rel="noopener noreferrer"
+      className="hover:underline"
+      hidden="true"
+    >
+      Designed by upklyak / Freepik
+    </a>
     </section>
+    
   );
 };
 

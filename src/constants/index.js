@@ -1,328 +1,275 @@
 export const myProjects = [
+ {
+  id: 1,
+  title: "JOKER ESEN Dashboard",
+  description:
+    "A web-based platform to manage club members and resources efficiently, keeping track of payments, materials, and member responsibilities.",
+  subDescription: [
+    "Implemented member management with tracking of semester cotisations, marking each as 'Payé' or 'Non payé'.",
+    "Built a materials management system to track inventory quantities and assign items to members.",
+    "Designed a responsive, modern interface using HTML, CSS, JS, and Bootstrap with animations.",
+    "Integrated dark mode support, ensuring visibility of all elements, including titles and tables.",
+  ],
+  href: "https://github.com/youssefbenyaacoub/joker-esen-.git",
+  logo: "",
+  image: "/assets/projects/joker.png",
+  tags: [
+    {
+      id: 1,
+      name: "HTML",
+      path: "/assets/logos/html5.svg",
+    },
+    {
+      id: 2,
+      name: "CSS",
+      path: "/assets/logos/css3.svg",
+    },
+    {
+      id: 3,
+      name: "JavaScript",
+      path: "/assets/logos/javascript.svg",
+    },
+    {
+      id: 4,
+      name: "Bootstrap",
+      path: "/assets/logos/Bootstrap_logo.svg",
+    },
+  ],
+}
+,
   {
-    id: 1,
-    title: "E-commerce Platform",
-    description:
-      "Facilitates purchases from international websites like Amazon and eBay, allowing customers to shop from these sites and have products delivered domestically.",
-    subDescription: [
-      "Built a scalable application with ASP.NET Core MVC, integrating global platforms like Amazon for domestic delivery.",
-      "Implemented secure authentication and database management using ASP.NET Core Identity and Entity Framework Core.",
-      "Designed a responsive frontend with Tailwind CSS, enhancing user experience.",
-      "Added payment systems, localization, and product filtering for functionality improvements.",
-    ],
-    href: "",
-    logo: "",
-    image: "/assets/projects/accessories.jpg",
-    tags: [
-      {
-        id: 1,
-        name: "C#",
-        path: "/assets/logos/csharp.svg",
-      },
-      {
-        id: 2,
-        name: ".Net",
-        path: "/assets/logos/dotnet.svg",
-      },
-      {
-        id: 3,
-        name: "Ef Core",
-        path: "/assets/logos/efcore.png",
-      },
-      {
-        id: 4,
-        name: "TailwindCSS",
-        path: "/assets/logos/tailwindcss.svg",
-      },
-    ],
-  },
+  id: 2,
+  title: "Ticket Management System",
+  description:
+    "A full-stack application for managing support tickets, built with Spring Boot and Angular. It allows teams to track issues, assign tasks, and monitor progress efficiently.",
+  subDescription: [
+    "Implemented CRUD features for tickets with fields: title, description, priority, status, and assigned user.",
+    "Designed a structured ticket workflow using status levels (NEW, IN_PROGRESS, RESOLVED, CLOSED).",
+    "Displayed tickets in a responsive table with color-coded badges for priority and status.",
+    "Built the backend using Spring Boot, JPA, and MySQL for robust data handling.",
+    "Developed a modern Angular frontend with dynamic forms and real-time UI updates.",
+    "Used Git for version control and ensured clean project architecture."
+  ],
+  href: "https://github.com/youssefbenyaacoub/Gestion-des-Ticket.git",
+  logo: "",
+  image: "/assets/projects/ticket.png",
+  tags: [
+    {
+      id: 1,
+      name: "Spring Boot",
+      path: "/assets/logos/Spring_Boot.svg",
+    },
+    {
+      id: 2,
+      name: "Angular",
+      path: "/assets/logos/angular-icon.svg",
+    },
+    {
+      id: 3,
+      name: "MySQL",
+      path: "/assets/logos/mysql-logo.svg",
+    },
+    {
+      id: 4,
+      name: "Java",
+      path: "/assets/logos/java-4-logo.svg",
+    },
+    {
+      id: 5,
+      name: "TypeScript",
+      path: "/assets/logos/Typescript_logo_2020.svg",
+    },
+  ],
+}
+,
   {
-    id: 2,
-    title: "Authentication & Authorization System",
+  id: 3,
+  title: "Enterprise Management Platform",
     description:
-      "A secure authentication and authorization system using Auth0 for seamless user management.",
-    subDescription: [
-      "Integrated Auth0 for authentication, supporting OAuth, JWT, and multi-factor authentication.",
-      "Implemented role-based access control (RBAC) for fine-grained user permissions.",
-      "Developed a React-based frontend with Tailwind CSS for a sleek user experience.",
-      "Connected to a secure SQLite database for user data storage.",
-    ],
-    href: "",
-    logo: "",
-    image: "/assets/projects/auth-system.jpg",
-    tags: [
-      {
-        id: 1,
-        name: "Auth0",
-        path: "/assets/logos/auth0.svg",
-      },
-      {
-        id: 2,
-        name: "React",
-        path: "/assets/logos/react.svg",
-      },
-      {
-        id: 3,
-        name: "SQLite",
-        path: "/assets/logos/sqlite.svg",
-      },
-      {
-        id: 4,
-        name: "TailwindCSS",
-        path: "/assets/logos/tailwindcss.svg",
-      },
-    ],
-  },
+    "A full-stack web platform built with React and MySQL, designed to centralize employee management, HR operations, accounting, and director-level decision tools. Includes an integrated chatbot for real-time employee assistance.",
+  subDescription: [
+    "Built with Create React App and MySQL, this platform integrates employee dashboards, HR management, accounting tools, and a director overview with analytics and KPIs. It features attendance and leave tracking, payroll and financial management, and an intelligent HR chatbot, all delivered through a responsive, scalable, and modern architecture."
+  ],
+  href: "https://github.com/youssefbenyaacoub/Gestion-Rh.git",
+  logo: "",
+  image: "/assets/projects/rh.png",
+  tags: [
+    {
+      id: 1,
+      name: "React",
+      path: "/assets/logos/react.svg",
+    },
+    {
+      id: 2,
+      name: "JavaScript",
+      path: "/assets/logos/javascript.svg",
+    },
+    {
+      id: 3,
+      name: "MySQL",
+      path: "/assets/logos/mysql-logo.svg",
+    },
+    {
+      id: 4,
+      name: "Node.js",
+      path: "/assets/logos/nodejs-logo.svg",
+    },
+    {
+      id: 5,
+      name: "Bootstrap",
+      path: "/assets/logos/Bootstrap_logo.svg",
+    }
+  ],
+}
+,
   {
-    id: 3,
-    title: "Blazor Web App",
-    description:
-      "A modern, interactive web application built with Blazor WebAssembly and .NET Core.",
-    subDescription: [
-      "Developed a fully interactive Single Page Application (SPA) using Blazor WebAssembly.",
-      "Implemented API interactions using .NET Core for a robust backend.",
-      "Designed responsive UI components with Tailwind CSS for an enhanced UX.",
-      "Integrated SQLite for efficient client-side database storage.",
-    ],
-    href: "",
-    logo: "",
-    image: "/assets/projects/blazor-app.jpg",
-    tags: [
-      {
-        id: 1,
-        name: "Blazor",
-        path: "/assets/logos/blazor.svg",
-      },
-      {
-        id: 2,
-        name: ".NET Core",
-        path: "/assets/logos/dotnetcore.svg",
-      },
-      {
-        id: 3,
-        name: "SQLite",
-        path: "/assets/logos/sqlite.svg",
-      },
-      {
-        id: 4,
-        name: "TailwindCSS",
-        path: "/assets/logos/tailwindcss.svg",
-      },
-    ],
-  },
-  {
-    id: 4,
-    title: "C++ Game Engine",
-    description:
-      "A lightweight C++ game engine designed for 2D and 3D game development.",
-    subDescription: [
-      "Built a powerful rendering engine using OpenGL and C++.",
-      "Developed a physics engine with collision detection and particle effects.",
-      "Implemented a scripting system for easy game customization.",
-      "Optimized performance with multi-threading and efficient memory management.",
-    ],
-    href: "",
-    logo: "",
-    image: "/assets/projects/game-engine.jpg",
-    tags: [
-      {
-        id: 1,
-        name: "C++",
-        path: "/assets/logos/cplusplus.svg",
-      },
-      {
-        id: 2,
-        name: "C#",
-        path: "/assets/logos/csharp.svg",
-      },
-      {
-        id: 3,
-        name: "Git",
-        path: "/assets/logos/git.svg",
-      },
-      {
-        id: 4,
-        name: "Microsoft",
-        path: "/assets/logos/microsoft.svg",
-      },
-    ],
-  },
-  {
-    id: 5,
-    title: "WordPress Custom Theme",
-    description:
-      "A fully customizable WordPress theme optimized for performance and SEO.",
-    subDescription: [
-      "Developed a responsive WordPress theme using HTML5, CSS3, and JavaScript.",
-      "Integrated Tailwind CSS for modern styling and UI enhancements.",
-      "Optimized SEO and page speed using Vite.js for fast builds.",
-      "Implemented custom widgets and plugin compatibility for extended functionality.",
-    ],
-    href: "",
-    logo: "",
-    image: "/assets/projects/wordpress-theme.jpg",
-    tags: [
-      {
-        id: 1,
-        name: "WordPress",
-        path: "/assets/logos/wordpress.svg",
-      },
-      {
-        id: 2,
-        name: "HTML5",
-        path: "/assets/logos/html5.svg",
-      },
-      {
-        id: 3,
-        name: "CSS3",
-        path: "/assets/logos/css3.svg",
-      },
-      {
-        id: 4,
-        name: "Vite.js",
-        path: "/assets/logos/vitejs.svg",
-      },
-    ],
-  },
-  {
-    id: 6,
-    title: "Online Learning Platform",
-    description:
-      "A web application that allows users to enroll in courses, watch video lectures, and take quizzes.",
-    subDescription: [
-      "Built using Blazor WebAssembly for a seamless SPA experience.",
-      "Implemented video streaming with Azure Media Services.",
-      "Added a quiz system with dynamic question generation and real-time grading.",
-      "Integrated Stripe API for secure payment processing.",
-    ],
-    href: "",
-    logo: "",
-    image: "/assets/projects/elearning.jpg",
-    tags: [
-      {
-        id: 1,
-        name: "Blazor",
-        path: "/assets/logos/blazor.svg",
-      },
-      {
-        id: 2,
-        name: "Azure",
-        path: "/assets/logos/azure.svg",
-      },
-      {
-        id: 3,
-        name: "Stripe",
-        path: "/assets/logos/stripe.svg",
-      },
-      {
-        id: 4,
-        name: "TailwindCSS",
-        path: "/assets/logos/tailwindcss.svg",
-      },
-    ],
-  },
+  id: 4,
+  title: "Men’s Clothing E-Commerce Platform",
+  description:
+    "A premium and modern e-commerce website for men's clothing, designed with a black & white 'old money' aesthetic. Features a full shopping experience with admin management tools.",
+  subDescription: [
+  "Built a full-stack e-commerce platform using PHP and MySQL.",
+  "Implemented secure user authentication and a structured product catalog.",
+  "Added a dynamic shopping cart with real-time updates.",
+  "Developed an admin dashboard for managing products and users.",
+  "Designed a fully responsive black & white 'old money' themed UI."
+],
+  href: "https://github.com/youssefbenyaacoub/benyaacoub-shop.git",
+  logo: "",
+  image: "/assets/projects/shop.png",
+  tags: [
+    {
+      id: 1,
+      name: "PHP",
+      path: "/assets/logos/PHP-logo.svg"
+    },
+    {
+      id: 2,
+      name: "MySQL",
+      path: "/assets/logos/mysql-logo.svg"
+    },
+    {
+      id: 3,
+      name: "Bootstrap 5",
+      path: "/assets/logos/Bootstrap_logo.svg"
+    },
+    {
+      id: 4,
+      name: "JavaScript",
+      path: "/assets/logos/javascript.svg"
+    },
+    {
+      id: 5,
+      name: "HTML5/CSS3",
+      path: "/assets/logos/html5.svg"
+    }
+  ]
+}
 ];
 
 export const mySocials = [
-  {
-    name: "WhatsApp",
-    href: "",
-    icon: "/assets/socials/whatsApp.svg",
-  },
+ 
   {
     name: "Linkedin",
-    href: "https://www.linkedin.com/in/ali-sanati/",
+    href: "https://www.linkedin.com/in/youssef-ben-yaacoub-a390b8338/",
     icon: "/assets/socials/linkedIn.svg",
   },
   {
     name: "Instagram",
-    href: "https://www.instagram.com/ali.sanatidev/reels/",
+    href: "https://www.instagram.com/just69jacob/",
     icon: "/assets/socials/instagram.svg",
   },
 ];
 
 export const experiences = [
   {
-    title: "Software Developer",
-    job: "Security & Defense Projects",
-    date: "2021-2023",
+    title: "Full-Stack Developer (Étudiant)",
+    job: "Projets académiques & personnels",
+    date: "2024 - Present",
     contents: [
-      "Enhanced application security and developed new features, adhering to standards set by the Passive Defense Organization and National Cyberspace Center.",
-      "Designed and implemented intuitive map interfaces using MapsUI, enhancing user experience and enabling seamless interactive map integration.",
-      "Developed applications for industrial automation, leveraging C++ and the Fatek API for PLC communication.",
-      "Enhanced responsiveness and usability of applications using Windows Forms and WPF frameworks.",
-      "Executed XML to SVG conversions using X-DOM, ensuring dynamic and efficient data visualization.",
-    ],
+      "Développement d’applications web full-stack : React, PHP, MySQL, Node.js.",
+      "Création d’une plateforme intégrée RH, comptabilité et gestion entreprise avec chatbot.",
+      "Développement d'un e-commerce 'old money' avec panier, authentification et panel admin.",
+      "Création d’un site professionnel pour la Bibliothèque de l’ESEN utilisé par les étudiants.",
+      "Gestion complète du cycle projet : conception, base de données, optimisation UI/UX."
+    ]
   },
   {
-    title: "Back-End Developer",
-    job: "Car Manufacture",
-    date: "2023-2024",
+    title: "Licence en Informatique de Gestion",
+    job: "École Supérieure de l'Économie Numérique (ESEN – La Manouba)",
+    date: "2023 - 2026",
     contents: [
-      "Engineered systems for large-scale data ingestion and analysis, ensuring efficient data processing and storage.",
-      "Developed back-end systems enabling vehicle-to-cloud communication for telemetry, diagnostics, and remote control:",
-      "✅ Implemented secure APIs, following ISO 26262 automotive safety standards.",
-      "✅ Ensured data privacy for customers and partners through industry-compliant protocols.",
-      "✅ Delivered remote features like over-the-air updates, real-time tracking, and remote start capabilities.",
-    ],
+      "Spécialisation en développement web, bases de données, systèmes d’information."
+    ]
   },
   {
-    title: "Freelance Developer",
-    job: "Self-Employed",
-    date: "2025-Present",
+    title: "Membre & Responsable Média",
+    job: "Associations et Clubs",
+    date: "2021 - Present",
     contents: [
-      "Created a personal portfolio using Three.js, React, Vite, and WebAPI to showcase technical expertise.",
-      "Continuously enhancing technical skills and expanding expertise in modern web development and back-end technologies.",
-    ],
+      "Responsable média chez BIL LPM (1 an).",
+      "Membre actif Enactus Charguia.",
+      "Organisation d’événements comme TE-COMM 2024.",
+      "Développement de compétences en leadership, communication et gestion d’équipe."
+    ]
   },
+  {
+    title: "Baccalauréat en Économie et Gestion",
+    job: "Lycée Ibn Abi Dhief – Manouba, Tunisie",
+    date: "2019 - 2023",
+    contents: [
+      "Formation centrée sur l’économie, la finance, la gestion et le management."
+    ]
+  }
 ];
+
 export const reviews = [
   {
-    name: "Jack",
-    username: "@jack",
-    body: "I've never seen anything like this before. It's amazing. I love it.",
-    img: "https://robohash.org/jack",
+    name: "Hichem",
+    username: "@hichem",
+    body: "Impeccable work! I was impressed by the professionalism and quality.",
+    img: "https://robohash.org/hichem",
   },
   {
-    name: "Jill",
-    username: "@jill",
-    body: "I don't know what to say. I'm speechless. This is amazing.",
-    img: "https://robohash.org/jill",
+    name: "Mouna",
+    username: "@mouna",
+    body: "The result exceeded my expectations. Highly recommended!",
+    img: "https://robohash.org/mouna",
   },
   {
-    name: "John",
-    username: "@john",
-    body: "I'm at a loss for words. This is amazing. I love it.",
-    img: "https://robohash.org/john",
+    name: "Rami",
+    username: "@rami",
+    body: "Fast and efficient service. Everything works perfectly.",
+    img: "https://robohash.org/rami",
   },
   {
-    name: "Alice",
-    username: "@alice",
-    body: "This is hands down the best thing I've experienced. Highly recommend!",
-    img: "https://robohash.org/alice",
+    name: "Amira",
+    username: "@amira",
+    body: "An amazing experience! The design and functionality are perfect.",
+    img: "https://robohash.org/amira",
   },
   {
-    name: "Bob",
-    username: "@bob",
-    body: "Incredible work! The attention to detail is phenomenal.",
-    img: "https://robohash.org/bob",
+    name: "Nizar",
+    username: "@nizar",
+    body: "Very satisfied with the work delivered. Attention to detail is remarkable.",
+    img: "https://robohash.org/nizar",
   },
   {
-    name: "Charlie",
-    username: "@charlie",
-    body: "This exceeded all my expectations. Absolutely stunning!",
-    img: "https://robohash.org/charlie",
+    name: "Safa",
+    username: "@safa",
+    body: "I’m impressed by the quality and speed of execution.",
+    img: "https://robohash.org/safa",
   },
   {
-    name: "Dave",
-    username: "@dave",
-    body: "Simply breathtaking. The best decision I've made in a while.",
-    img: "https://robohash.org/dave",
+    name: "Anis",
+    username: "@anis",
+    body: "Excellent work, everything is smooth and intuitive. Well done!",
+    img: "https://robohash.org/anis",
   },
   {
-    name: "Eve",
-    username: "@eve",
-    body: "So glad I found this. It has changed the game for me.",
-    img: "https://robohash.org/eve",
+    name: "Leila",
+    username: "@leila",
+    body: "This was exactly what I was looking for. Very professional and efficient.",
+    img: "https://robohash.org/leila",
   },
 ];

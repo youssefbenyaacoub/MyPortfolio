@@ -1,71 +1,92 @@
 import { useState } from "react";
 import { motion } from "motion/react";
+
 function Navigation() {
   return (
-    <ul className="nav-ul">
-      <li className="nav-li">
-        <a className="nav-link" href="#home">
+    <ul className="flex flex-col items-center justify-center gap-8 sm:flex-row sm:gap-12">
+      <li>
+        <a 
+          className="text-base font-medium text-neutral-300 hover:text-aqua transition-colors duration-300 relative group"
+          href="#home"
+        >
           Home
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-aqua group-hover:w-full transition-all duration-300"></span>
         </a>
       </li>
-      <li className="nav-li">
-        <a className="nav-link" href="#about">
+      <li>
+        <a 
+          className="text-base font-medium text-neutral-300 hover:text-aqua transition-colors duration-300 relative group"
+          href="#about"
+        >
           About
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-aqua group-hover:w-full transition-all duration-300"></span>
         </a>
       </li>
-      <li className="nav-li">
-        <a className="nav-link" href="#work">
+      <li>
+        <a 
+          className="text-base font-medium text-neutral-300 hover:text-aqua transition-colors duration-300 relative group"
+          href="#work"
+        >
           Work
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-aqua group-hover:w-full transition-all duration-300"></span>
         </a>
       </li>
-      <li className="nav-li">
-        <a className="nav-link" href="#contact">
+      <li>
+        <a 
+          className="text-base font-medium text-neutral-300 hover:text-aqua transition-colors duration-300 relative group"
+          href="#contact"
+        >
           Contact
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-aqua group-hover:w-full transition-all duration-300"></span>
         </a>
       </li>
     </ul>
   );
 }
+
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
+  
   return (
-    <div className="fixed inset-x-0 z-20 w-full backdrop-blur-lg bg-primary/40">
-      <div className="mx-auto c-space max-w-7xl">
-        <div className="flex items-center justify-between py-2 sm:py-0">
-          <a
-            href="/"
-            className="text-xl font-bold transition-colors text-neutral-400 hover:text-white"
-          >
-            Ali
-          </a>
-          <button
-            onClick={() => setIsOpen(!isOpen)}
-            className="flex cursor-pointer text-neutral-400 hover:text-white focus:outline-none sm:hidden"
-          >
-            <img
-              src={isOpen ? "assets/close.svg" : "assets/menu.svg"}
-              className="w-6 h-6"
-              alt="toggle"
-            />
-          </button>
-          <nav className="hidden sm:flex">
-            <Navigation />
-          </nav>
-        </div>
-      </div>
-      {isOpen && (
-        <motion.div
-          className="block overflow-hidden text-center sm:hidden"
-          initial={{ opacity: 0, x: -10 }}
-          animate={{ opacity: 1, x: 0 }}
-          style={{ maxHeight: "100vh" }}
-          transition={{ duration: 1 }}
+    <div className="fixed inset-x-0 top-0 z-20 w-full hidden sm:flex items-center justify-center pt-4 pointer-events-none">
+      <motion.div 
+        className="bg-black/20 backdrop-blur-md border border-aqua/20 rounded-full px-8 py-4 pointer-events-auto"
+        initial={{ opacity: 0, y: -20 }}
+        animate={{ opacity: 1, y: 0 }}
+        transition={{ duration: 0.6 }}
+      >
+        {/* Mobile menu button */}
+        <button
+          onClick={() => setIsOpen(!isOpen)}
+          className="flex cursor-pointer text-neutral-400 hover:text-aqua focus:outline-none sm:hidden"
         >
-          <nav className="pb-5">
-            <Navigation />
-          </nav>
-        </motion.div>
-      )}
+          <img
+            src={isOpen ? "assets/close.svg" : "assets/menu.svg"}
+            className="w-6 h-6"
+            alt="toggle"
+          />
+        </button>
+
+        {/* Desktop navigation */}
+        <nav className="hidden sm:flex">
+          <Navigation />
+        </nav>
+
+        {/* Mobile navigation */}
+        {isOpen && (
+          <motion.div
+            className="absolute top-full left-1/2 transform -translate-x-1/2 mt-4 bg-black/20 backdrop-blur-md border border-aqua/20 rounded-3xl px-8 py-6 sm:hidden"
+            initial={{ opacity: 0, scale: 0.95 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 0.95 }}
+            transition={{ duration: 0.3 }}
+          >
+            <nav>
+              <Navigation />
+            </nav>
+          </motion.div>
+        )}
+      </motion.div>
     </div>
   );
 };
