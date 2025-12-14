@@ -5,7 +5,18 @@ import compression from "vite-plugin-compression";
 
 // https://vite.dev/config/
 export default defineConfig({
-  plugins: [react(), tailwindcss(), compression()],
+  plugins: [
+    react(),
+    tailwindcss(),
+    compression({
+      algorithm: "gzip",
+      ext: ".gz",
+    }),
+    compression({
+      algorithm: "brotli",
+      ext: ".br",
+    }),
+  ],
   build: {
     rollupOptions: {
       output: {
