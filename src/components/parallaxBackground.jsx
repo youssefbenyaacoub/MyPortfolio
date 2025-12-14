@@ -2,7 +2,7 @@
 
 const ParallaxBackground = () => {
   return (
-    <section className="absolute inset-0 bg-black/40">
+    <section className="absolute inset-0 bg-black/10">
       <div className="relative h-screen overflow-y-hidden">
         {/* Background Sky */}
         <div
@@ -11,6 +11,7 @@ const ParallaxBackground = () => {
             backgroundImage: "url(/assets/sky.jpg)",
             backgroundPosition: "bottom",
             backgroundSize: "cover",
+            backgroundColor: "#0f0f1e",
           }}
         />
         {/* Mountain Layer 3 */}
