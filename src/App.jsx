@@ -6,19 +6,23 @@ import Experiences from "./sections/Experiences";
 import Testimonial from "./sections/Testimonial";
 import Contact from "./sections/Contact";
 import Footer from './sections/Footer';
+import { SpeedInsights } from "@vercel/speed-insights/react";
 
 const App = () => {
   return (
-    <div className="container mx-auto max-w-7xl">
-      <Navbar />
-      <Hero />
-      <About />
-      <Projects />
-      <Experiences />
-      <Testimonial />
-      <Contact />
-      <Footer/>
-    </div>
+    <>
+      <div className="container mx-auto max-w-7xl">
+        <Navbar />
+        <Hero />
+        <About />
+        <Projects />
+        <Experiences />
+        <Testimonial />
+        <Contact />
+        <Footer/>
+      </div>
+      <SpeedInsights />
+    </>
   );
 };
 
