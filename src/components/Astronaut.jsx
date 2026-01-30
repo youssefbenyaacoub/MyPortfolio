@@ -31,8 +31,10 @@ export function Astronaut(props) {
     ySpring.set(-1);
   }, [ySpring]);
   useFrame(() => {
+    if (props.active === false) return;
     group.current.position.y = ySpring.get();
   });
+
   return (
     <group
       ref={group}

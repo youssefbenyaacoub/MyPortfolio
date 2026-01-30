@@ -1,118 +1,116 @@
-import { useRef } from "react";
-import Card from "../components/Card";
-import { Globe } from "../components/globe";
-import CopyEmailButton from "../components/CopyEmailButton";
-import { Frameworks } from "../components/Frameworks";
+import { motion } from "motion/react";
+import { ImageWithFallback } from "../components/ImageWithFallback";
+import { TYPO } from "../components/NewDesignUtils";
+
+const timelineEvents = [
+  {
+    year: "2019 - 2023",
+    title: "The Foundation",
+    desc: "Completed Baccalaureate in Economy & Management, sparked interest in systems and logic.",
+    color: "#B11226",
+  },
+  {
+    year: "2023 - PRESENT",
+    title: "Digital Deep Dive",
+    desc: "Enrolled in Computer Science for Management at ESEN, mastering the art of full-stack development.",
+    color: "#00E5FF",
+  },
+  {
+    year: "2024 - BEYOND",
+    title: "Building the Future",
+    desc: "Creating high-impact web applications and exploring the cutting edge of tech ecosystems.",
+    color: "#B11226",
+  },
+];
 
 const About = () => {
-  const grid2Container = useRef();
-
   return (
-    <section className="c-space section-spacing" id="about">
-      <h2 className="text-heading">About</h2>
-      <div className="grid grid-cols-1 gap-4 md:grid-cols-6 md:auto-rows-[18rem] mt-12">
-        {/* Grid 1 */}
-        <div className="flex items-end grid-default-color grid-1">
-          <img
-            src="assets/coding-pov.avif"
-            className="absolute scale-[1.75] -right-[5rem] -top-[1rem] md:scale-[3] md:left-50 md:inset-y-10 lg:scale-[2.5]"
-          />
+    <section id="about" className="max-w-7xl mx-auto px-6 py-32 overflow-hidden">
+      <div className="grid grid-cols-1 lg:grid-cols-2 gap-20 items-center">
+        <motion.div
+          initial={{ opacity: 0, x: -50 }}
+          whileInView={{ opacity: 1, x: 0 }}
+          viewport={{ once: true }}
+          transition={{ duration: 0.8 }}
+        >
+          <h2 className="text-[#00E5FF] font-mono tracking-widest text-sm mb-4">// FILE: 001_ORIGIN</h2>
+          <h3 className="text-5xl md:text-7xl font-black italic tracking-tighter mb-12 uppercase leading-none text-white">
+            MY <br />
+            <span className="text-cyan-400">JOURNEY</span>
+          </h3>
 
-          <div className="z-10">
-            <p className="headtext">Hi, I&apos;m Youssef</p>
-            <p className="subtext">
-              I develop elegant solutions for complex problems
-            </p>
+          <div className="space-y-12 relative">
+            <div className="absolute left-[19px] top-0 bottom-0 w-[2px] bg-gradient-to-b from-cyan-400 via-indigo-600 to-transparent hidden md:block" />
+
+            {timelineEvents.map((event, i) => (
+              <motion.div
+                key={i}
+                initial={{ opacity: 0, y: 20 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                viewport={{ once: true }}
+                transition={{ delay: i * 0.2 }}
+                className="relative pl-0 md:pl-16 group"
+              >
+                <div
+                  className="absolute left-0 top-0 w-10 h-10 rounded-full border-4 border-[#030412] z-10 hidden md:flex items-center justify-center transition-colors duration-300 bg-cyan-500"
+                >
+                  <div className="w-2 h-2 bg-white rounded-full" />
+                </div>
+
+                <div className="bg-white/5 backdrop-blur-sm border border-white/5 p-8 hover:border-cyan-400/40 transition-all duration-300 group-hover:translate-x-2 rounded-2xl">
+                  <span className="text-xs font-black tracking-widest text-cyan-400 mb-2 block">{event.year}</span>
+                  <h4 className="text-2xl font-black mb-4 uppercase italic tracking-tight text-white">{event.title}</h4>
+                  <p className="text-gray-400 leading-relaxed font-['Inter',sans-serif]">{event.desc}</p>
+                </div>
+              </motion.div>
+            ))}
           </div>
-          <div className="absolute inset-x-0 pointer-evets-none -bottom-4 h-1/2 sm:h-1/3 bg-gradient-to-t from-indigo" />
-        </div>
-        {/* Grid 2 */}
-        <div className="grid-default-color grid-2">
-          <div
-            ref={grid2Container}
-            className="flex items-center justify-center w-full h-full"
+        </motion.div>
+
+        <motion.div
+          initial={{ opacity: 0, scale: 0.8 }}
+          whileInView={{ opacity: 1, scale: 1 }}
+          viewport={{ once: true }}
+          transition={{ duration: 1 }}
+          className="relative"
+        >
+          <div className="absolute -inset-4 bg-gradient-to-tr from-cyan-400/20 to-indigo-600/20 blur-2xl rounded-3xl" />
+          <div className="relative overflow-hidden rounded-3xl aspect-[4/5] border border-white/10 group">
+            <ImageWithFallback
+              src="https://images.unsplash.com/photo-1625685554446-9c0dc87d506a?auto=format&fit=crop&q=80&w=1080"
+              alt="Origin Story"
+              className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+            />
+            <div className="absolute inset-0 bg-gradient-to-t from-[#030412] via-transparent to-transparent opacity-80" />
+
+            <div className="absolute bottom-8 left-8 right-8">
+              <div className="flex items-center gap-4 mb-2">
+                <div className="h-[2px] w-12 bg-cyan-400" />
+                <span className="text-xs font-black tracking-widest text-cyan-400">YOUSSEF.DEV DATA</span>
+              </div>
+              <h4 className="text-3xl font-black italic uppercase text-white">Subject: Ben Yaacoub, Y.</h4>
+            </div>
+          </div>
+
+          {/* Floating UI Element */}
+          <motion.div
+            animate={{ y: [0, -10, 0] }}
+            transition={{ duration: 4, repeat: Infinity }}
+            className="absolute -top-10 -right-10 w-48 p-4 bg-black/80 backdrop-blur-md border border-cyan-400/50 text-[10px] font-mono leading-tight z-20 hidden md:block"
           >
-            <p className="flex items-end text-5xl text-gray-500">
-              Turning Ideas
-            </p>
-            <Card
-              style={{ rotate: "75deg", top: "30%", left: "20%" }}
-              text="Responsive Design"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "-30deg", top: "60%", left: "45%" }}
-              text="Clean Code"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "90deg", bottom: "30%", left: "70%" }}
-              text="Design Patterns"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "-45deg", top: "55%", left: "0%" }}
-              text="Design Principles"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "20deg", top: "10%", left: "38%" }}
-              text="Problem Solving"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "30deg", top: "70%", left: "70%" }}
-              image="assets/logos/react.png"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "-45deg", top: "70%", left: "25%" }}
-              image="assets/logos/tailwind.png"
-              containerRef={grid2Container}
-            />
-            <Card
-              style={{ rotate: "-45deg", top: "5%", left: "10%" }}
-              image="assets/logos/node.png"
-              containerRef={grid2Container}
-            />
-          </div>
-        </div>
-        {/* Grid 3 */}
-        <div className="grid-black-color grid-3">
-          <div className="z-10 w-[50%]">
-            <p className="headtext">My timezone is GMT+2</p>
-            <p className="subtext">
-              I&apos;m available for freelance work and full-time positions. Reach out and let&apos;s create something amazing together!
-            </p>
-          </div>
-          <figure className="absolute left-[30%] top-[10%]">
-            <Globe />
-          </figure>
-        </div>
-        {/* Grid 4 */}
-        <div className="grid-special-color grid-4">
-          <div className="flex flex-col items-center justify-center gap-4 size-full">
-            <p className="text-center headtext">
-              Tech Stack
-            </p>
-            <CopyEmailButton />
-          </div>
-        </div>
-        {/* Grid 5 */}
-        <div className="grid-default-color grid-5">
-          <div className="z-10 w-[50%]">
-            <p className="headText">Tech Stack</p>
-            <p className="subtext">
-              I love building efficient & scalable web applications
-            </p>
-          </div>
-          <div className="absolute inset-y-0 md:inset-y-9 w-full h-full start-[50%] md:scale-125">
-            <Frameworks />
-          </div>
-        </div>
+            <div className="text-cyan-400 mb-2 border-b border-cyan-400/20 pb-1 uppercase">Analysis active</div>
+            <div className="text-white/60">
+              STR: 85/100<br />
+              AGL: 92/100<br />
+              INT: 95/100<br />
+              SENSE: TRIGGERED
+            </div>
+          </motion.div>
+        </motion.div>
       </div>
     </section>
   );
 };
 
 export default About;
+

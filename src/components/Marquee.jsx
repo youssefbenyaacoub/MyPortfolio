@@ -1,5 +1,6 @@
 import { twMerge } from "tailwind-merge";
 import PropTypes from "prop-types";
+import { useState, useEffect, useRef } from "react";
 
 export default function Marquee({
   className,
@@ -10,15 +11,31 @@ export default function Marquee({
   repeat = 4,
   ...props
 }) {
+  const [isVisible, setIsVisible] = useState(false);
+  const containerRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => setIsVisible(entry.isIntersecting),
+      { threshold: 0.05 }
+    );
+    if (containerRef.current) observer.observe(containerRef.current);
+    return () => observer.disconnect();
+  }, []);
+
   return (
     <div
       {...props}
+      ref={containerRef}
       className={twMerge(
-        `group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)] ${
-          vertical ? "flex-col" : "flex-row"
+        `group flex overflow-hidden p-2 [--duration:40s] [--gap:1rem] [gap:var(--gap)] ${vertical ? "flex-col" : "flex-row"
         }`,
         className
       )}
+      style={{
+        ...props.style,
+        animationPlayState: isVisible ? "running" : "paused",
+      }}
     >
       {Array(repeat)
         .fill(0)

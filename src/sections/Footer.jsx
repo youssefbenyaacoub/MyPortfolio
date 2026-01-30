@@ -16,17 +16,17 @@ const Footer = () => {
         ))}
       </div>
       <p>© 2025 Youssef. All rights reserved.</p>
-         <a
-      href="http://www.freepik.com"
-      target="_blank"
-      rel="noopener noreferrer"
-      className="hover:underline"
-      hidden="true"
-    >
-      Designed by upklyak / Freepik
-    </a>
+      <a
+        href="http://www.freepik.com"
+        target="_blank"
+        rel="noopener noreferrer"
+        className="hover:underline"
+        hidden={true}
+      >
+        Designed by upklyak / Freepik
+      </a>
     </section>
-    
+
   );
 };
 

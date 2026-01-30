@@ -56,7 +56,6 @@ body {
   font-family: "Funnel Display", sans-serif;
   color: white;
   overflow-x: hidden;
-  will-change: scroll-position;
 }
 
 .c-space {
@@ -64,7 +63,7 @@ body {
 }
 
 .hover-animation {
-  @apply hover:-translate-y-1 duration-200;
+  @apply hover:-translate-y-1 transition-transform duration-200;
 }
 
 .section-spacing {
@@ -102,20 +101,21 @@ body {
 
 /* About Section */
 .grid-1 {
-  @apply row-span-2 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200 will-change-transform;
+  @apply row-span-2 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden transition-transform duration-200;
 }
 .grid-2 {
-  @apply row-span-1 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200 will-change-contents;
+  @apply row-span-1 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden transition-transform duration-200;
 }
 .grid-3 {
-  @apply row-span-1 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200 will-change-transform;
+  @apply row-span-1 md:col-span-3 h-[15rem] md:h-full relative overflow-hidden transition-transform duration-200;
 }
 .grid-4 {
-  @apply row-span-1 md:col-span-2 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200 will-change-transform;
+  @apply row-span-1 md:col-span-2 h-[15rem] md:h-full relative overflow-hidden transition-transform duration-200;
 }
 .grid-5 {
-  @apply row-span-1 md:col-span-4 h-[15rem] md:h-full relative overflow-hidden hover:-translate-y-1 duration-200 will-change-transform;
+  @apply row-span-1 md:col-span-4 h-[15rem] md:h-full relative overflow-hidden transition-transform duration-200;
 }
+
 
 .grid-default-color {
   @apply p-6 bg-gradient-to-b from-storm to-indigo rounded-2xl;

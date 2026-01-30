@@ -5,7 +5,7 @@ function Navigation() {
   return (
     <ul className="flex flex-col items-center justify-center gap-8 sm:flex-row sm:gap-12">
       <li>
-        <a 
+        <a
           className="text-base font-medium text-neutral-300 hover:text-aqua transition-colors duration-300 relative group"
           href="#home"
         >
@@ -14,7 +14,7 @@ function Navigation() {
         </a>
       </li>
       <li>
-        <a 
+        <a
           className="text-base font-medium text-neutral-300 hover:text-aqua transition-colors duration-300 relative group"
           href="#about"
         >
@@ -22,17 +22,36 @@ function Navigation() {
           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-aqua group-hover:w-full transition-all duration-300"></span>
         </a>
       </li>
+
       <li>
-        <a 
+        <a
           className="text-base font-medium text-neutral-300 hover:text-aqua transition-colors duration-300 relative group"
-          href="#work"
+          href="#tech"
+        >
+          Stack
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-aqua group-hover:w-full transition-all duration-300"></span>
+        </a>
+      </li>
+      <li>
+        <a
+          className="text-base font-medium text-neutral-300 hover:text-aqua transition-colors duration-300 relative group"
+          href="#projects"
+        >
+          Projects
+          <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-aqua group-hover:w-full transition-all duration-300"></span>
+        </a>
+      </li>
+      <li>
+        <a
+          className="text-base font-medium text-neutral-300 hover:text-aqua transition-colors duration-300 relative group"
+          href="#experience"
         >
           Work
           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-aqua group-hover:w-full transition-all duration-300"></span>
         </a>
       </li>
       <li>
-        <a 
+        <a
           className="text-base font-medium text-neutral-300 hover:text-aqua transition-colors duration-300 relative group"
           href="#contact"
         >
@@ -40,16 +59,17 @@ function Navigation() {
           <span className="absolute bottom-0 left-0 w-0 h-0.5 bg-aqua group-hover:w-full transition-all duration-300"></span>
         </a>
       </li>
+
     </ul>
   );
 }
 
 const Navbar = () => {
   const [isOpen, setIsOpen] = useState(false);
-  
+
   return (
     <div className="fixed inset-x-0 top-0 z-20 w-full hidden sm:flex items-center justify-center pt-4 pointer-events-none">
-      <motion.div 
+      <motion.div
         className="bg-black/20 backdrop-blur-md border border-aqua/20 rounded-full px-8 py-4 pointer-events-auto"
         initial={{ opacity: 0, y: -20 }}
         animate={{ opacity: 1, y: 0 }}

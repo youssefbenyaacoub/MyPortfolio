@@ -11,7 +11,7 @@ const MOVEMENT_DAMPING = 1400;
 const GLOBE_CONFIG = {
   width: 800,
   height: 800,
-  onRender: () => {},
+  onRender: () => { },
   devicePixelRatio: 2,
   phi: 0,
   theta: 0.3,
@@ -65,6 +65,23 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
     }
   };
 
+  const isVisible = useRef(true);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        isVisible.current = entry.isIntersecting;
+      },
+      { threshold: 0.1 }
+    );
+
+    if (canvasRef.current) {
+      observer.observe(canvasRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
+
   useEffect(() => {
     const onResize = () => {
       if (canvasRef.current) {
@@ -80,6 +97,7 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
       width: widthRef.current * 2,
       height: widthRef.current * 2,
       onRender: (state) => {
+        if (!isVisible.current) return;
         if (!pointerInteracting.current) phiRef.current += 0.005;
         state.phi = phiRef.current + rs.get();
         state.width = widthRef.current * 2;
@@ -87,12 +105,15 @@ export function Globe({ className, config = GLOBE_CONFIG }) {
       },
     });
 
-    setTimeout(() => (canvasRef.current.style.opacity = "1"), 0);
+    setTimeout(() => {
+      if (canvasRef.current) canvasRef.current.style.opacity = "1";
+    }, 0);
     return () => {
       globe.destroy();
       window.removeEventListener("resize", onResize);
     };
   }, [rs, config]);
+
 
   return (
     <div

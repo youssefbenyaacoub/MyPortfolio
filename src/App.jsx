@@ -1,18 +1,15 @@
-import { useState, lazy, Suspense } from "react";
+import { useState } from "react";
 import Navbar from "./sections/Navbar";
 import Hero from "./sections/Hero";
+import About from "./sections/About";
+import Projects from "./sections/Projects";
+import Experiences from "./sections/Experiences";
+import Testimonial from "./sections/Testimonial";
+import Contact from "./sections/Contact";
+import Tech from "./sections/Tech";
+import Footer from "./sections/Footer";
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import SplashScreen from "./components/SplashScreen";
-
-// Lazy load heavy components
-const About = lazy(() => import("./sections/About"));
-const Projects = lazy(() => import("./sections/Projects"));
-const Experiences = lazy(() => import("./sections/Experiences"));
-const Testimonial = lazy(() => import("./sections/Testimonial"));
-const Contact = lazy(() => import("./sections/Contact"));
-const Footer = lazy(() => import("./sections/Footer"));
-
-const LoadingFallback = () => <div className="h-20" />; // Placeholder for lazy loaded items
 
 const App = () => {
   const [showSplash, setShowSplash] = useState(true);
@@ -23,23 +20,36 @@ const App = () => {
 
   return (
     <>
+      <style>{`
+        @import url('https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@300..700&family=Inter:wght@400;500;600;700;800;900&family=JetBrains+Mono:wght@400;700&display=swap');
+        html { scroll-behavior: smooth; }
+        ::-webkit-scrollbar { width: 6px; }
+        ::-webkit-scrollbar-track { background: #030412; }
+        ::-webkit-scrollbar-thumb { background: #1a1b2e; border-radius: 10px; }
+        ::-webkit-scrollbar-thumb:hover { background: #00FFFF; }
+      `}</style>
       {showSplash && <SplashScreen onLoadComplete={handleSplashComplete} />}
-      <div className="container mx-auto max-w-7xl scroll-smooth">
+      <div className="bg-[#030412] text-white selection:bg-cyan-500/30 selection:text-cyan-400 overflow-x-hidden">
         <Navbar />
-        <Hero />
-        <Suspense fallback={<LoadingFallback />}>
+        <main>
+          <Hero />
           <About />
-          <Projects />
-          <Experiences />
-          <Testimonial />
-          <Contact />
-          <Footer />
-        </Suspense>
+          <Tech />
+          <div className="container mx-auto max-w-7xl scroll-smooth">
+            <Projects />
+            <Experiences />
+            <Testimonial />
+            <Contact />
+          </div>
+        </main>
+        <Footer />
       </div>
       <SpeedInsights />
     </>
   );
 };
 
+
 export default App;
+
 
