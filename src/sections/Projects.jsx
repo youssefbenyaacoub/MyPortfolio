@@ -1,11 +1,11 @@
-import { useState } from "react";
+import { useState, memo } from "react";
 import { motion, AnimatePresence } from "motion/react";
 import { Plus, ChevronRight, X, ExternalLink } from "lucide-react";
 import { myProjects } from "../constants";
 import { ImageWithFallback } from "../components/ImageWithFallback";
 import { TYPO, TechTag } from "../components/NewDesignUtils";
 
-const ProjectModal = ({ project, onClose }) => {
+const ProjectModal = memo(({ project, onClose }) => {
   if (!project) return null;
   return (
     <motion.div
@@ -61,7 +61,44 @@ const ProjectModal = ({ project, onClose }) => {
       </motion.div>
     </motion.div>
   );
-};
+});
+
+const ProjectCard = memo(({ p, i, onSelect }) => {
+  return (
+    <motion.div
+      initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
+      whileInView={{ opacity: 1, x: 0 }}
+      viewport={{ once: true, margin: "-100px" }}
+      className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 items-center`}
+    >
+      <div className="w-full md:w-3/5 group cursor-pointer relative" onClick={() => onSelect(p)}>
+        <div className="absolute inset-0 bg-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center rounded-[2rem]">
+          <div className="w-16 h-16 bg-cyan-400 text-slate-950 rounded-full flex items-center justify-center scale-0 group-hover:scale-100 transition-transform duration-500">
+            <Plus size={32} />
+          </div>
+        </div>
+        <div className="aspect-video rounded-[2rem] overflow-hidden border border-white/10 grayscale hover:grayscale-0 transition-all duration-700">
+          <ImageWithFallback src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
+        </div>
+      </div>
+      <div className="w-full md:w-2/5 space-y-6">
+        <div className="space-y-2">
+          <h3 className="text-4xl md:text-5xl font-black text-white leading-tight">{p.title}</h3>
+          <div className="flex flex-wrap gap-2">
+            {p.tags.slice(0, 3).map(t => <TechTag key={t.name || t} text={t.name || t} />)}
+          </div>
+        </div>
+        <p className={`${TYPO.body} text-lg line-clamp-3`}>{p.description}</p>
+        <button
+          onClick={() => onSelect(p)}
+          className="flex items-center gap-3 text-cyan-400 font-bold uppercase tracking-widest text-xs group"
+        >
+          Read Mission Data <ChevronRight className="group-hover:translate-x-2 transition-transform" />
+        </button>
+      </div>
+    </motion.div>
+  );
+});
 
 const Projects = () => {
   const [selected, setSelected] = useState(null);
@@ -70,44 +107,12 @@ const Projects = () => {
     <section id="projects" className="py-32 px-8 bg-[#030412]">
       <div className="max-w-7xl mx-auto">
         <div className="mb-20 space-y-4">
-          <span className="text-cyan-400 font-mono text-xs uppercase tracking-[0.5em]">Phase 03 / Selected Systems</span>
+          <span className="text-cyan-400 font-mono text-xs uppercase tracking-[0.5em]">Phase 04 / Selected Systems</span>
           <h2 className={`${TYPO.h2} text-4xl md:text-6xl`}>Active Projects.</h2>
         </div>
         <div className="space-y-24">
           {myProjects.map((p, i) => (
-            <motion.div
-              key={p.id || i}
-              initial={{ opacity: 0, x: i % 2 === 0 ? -50 : 50 }}
-              whileInView={{ opacity: 1, x: 0 }}
-              viewport={{ once: true }}
-              className={`flex flex-col ${i % 2 === 0 ? 'md:flex-row' : 'md:flex-row-reverse'} gap-12 items-center`}
-            >
-              <div className="w-full md:w-3/5 group cursor-pointer relative" onClick={() => setSelected(p)}>
-                <div className="absolute inset-0 bg-cyan-400/20 opacity-0 group-hover:opacity-100 transition-opacity z-10 flex items-center justify-center rounded-[2rem]">
-                  <div className="w-16 h-16 bg-cyan-400 text-slate-950 rounded-full flex items-center justify-center scale-0 group-hover:scale-100 transition-transform duration-500">
-                    <Plus size={32} />
-                  </div>
-                </div>
-                <div className="aspect-video rounded-[2rem] overflow-hidden border border-white/10 grayscale hover:grayscale-0 transition-all duration-700">
-                  <ImageWithFallback src={p.image} alt={p.title} className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-1000" />
-                </div>
-              </div>
-              <div className="w-full md:w-2/5 space-y-6">
-                <div className="space-y-2">
-                  <h3 className="text-4xl md:text-5xl font-black text-white leading-tight">{p.title}</h3>
-                  <div className="flex flex-wrap gap-2">
-                    {p.tags.slice(0, 3).map(t => <TechTag key={t.name || t} text={t.name || t} />)}
-                  </div>
-                </div>
-                <p className={`${TYPO.body} text-lg line-clamp-3`}>{p.description}</p>
-                <button
-                  onClick={() => setSelected(p)}
-                  className="flex items-center gap-3 text-cyan-400 font-bold uppercase tracking-widest text-xs group"
-                >
-                  Read Mission Data <ChevronRight className="group-hover:translate-x-2 transition-transform" />
-                </button>
-              </div>
-            </motion.div>
+            <ProjectCard key={p.id || i} p={p} i={i} onSelect={setSelected} />
           ))}
         </div>
       </div>
@@ -119,4 +124,3 @@ const Projects = () => {
 };
 
 export default Projects;
-

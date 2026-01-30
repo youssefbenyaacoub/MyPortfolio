@@ -12,12 +12,12 @@ const GLOBE_CONFIG = {
   width: 800,
   height: 800,
   onRender: () => { },
-  devicePixelRatio: 2,
+  devicePixelRatio: 1, // Reduced for performance
   phi: 0,
   theta: 0.3,
   dark: 1,
   diffuse: 0.4,
-  mapSamples: 16000,
+  mapSamples: 8000, // Reduced from 16000 for better responsiveness
   mapBrightness: 1.2,
   baseColor: [1, 1, 1],
   markerColor: [1, 1, 1],
@@ -35,6 +35,7 @@ const GLOBE_CONFIG = {
     { location: [41.0082, 28.9784], size: 0.06 },
   ],
 };
+
 
 export function Globe({ className, config = GLOBE_CONFIG }) {
   const phiRef = useRef(0);

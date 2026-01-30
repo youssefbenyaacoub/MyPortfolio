@@ -7,6 +7,10 @@ const Tech = () => {
     return (
         <section id="tech" className="py-24 px-6">
             <div className="max-w-7xl mx-auto">
+                <div className="mb-12 space-y-2">
+                    <span className="text-cyan-400 font-mono text-xs uppercase tracking-[0.5em]">Phase 02 / Technological Stack</span>
+                    <h2 className={`${TYPO.h2} text-4xl md:text-6xl text-white`}>Infrastructure.</h2>
+                </div>
                 <div className="grid grid-cols-1 lg:grid-cols-2 gap-8">
                     {/* Tech Stack Card */}
                     <GlassCard className="flex flex-col items-center justify-center min-h-[400px]">

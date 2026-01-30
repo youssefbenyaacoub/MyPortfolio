@@ -36,8 +36,8 @@ const App = () => {
           <About />
           <Tech />
           <div className="container mx-auto max-w-7xl scroll-smooth">
-            <Projects />
             <Experiences />
+            <Projects />
             <Testimonial />
             <Contact />
           </div>

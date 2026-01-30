@@ -8,7 +8,7 @@ const Experiences = () => {
     <section id="experience" className="py-32 px-8 bg-[#030412]">
       <div className="max-w-7xl mx-auto">
         <div className="mb-20 space-y-4">
-          <span className="text-cyan-400 font-mono text-xs uppercase tracking-[0.5em]">Phase 02 / The Journey</span>
+          <span className="text-cyan-400 font-mono text-xs uppercase tracking-[0.5em]">Phase 03 / The Mission</span>
           <h2 className={`${TYPO.h2} text-4xl md:text-6xl`}>Mission Log.</h2>
         </div>
         <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">

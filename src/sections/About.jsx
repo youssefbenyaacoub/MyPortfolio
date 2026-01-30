@@ -33,7 +33,7 @@ const About = () => {
           viewport={{ once: true }}
           transition={{ duration: 0.8 }}
         >
-          <h2 className="text-[#00E5FF] font-mono tracking-widest text-sm mb-4">// FILE: 001_ORIGIN</h2>
+          <span className="text-cyan-400 font-mono text-xs uppercase tracking-[0.5em]">Phase 01 / Origin Story</span>
           <h3 className="text-5xl md:text-7xl font-black italic tracking-tighter mb-12 uppercase leading-none text-white">
             MY <br />
             <span className="text-cyan-400">JOURNEY</span>
