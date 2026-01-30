@@ -1,9 +1,9 @@
 const ParallaxBackground = () => {
   return (
-    <section 
-      className="absolute inset-0" 
+    <section
+      className="absolute inset-0"
       style={{
-        backgroundImage: "url(/assets/space.jpg)",
+        backgroundImage: "url(/assets/space.avif)",
         backgroundPosition: "center",
         backgroundSize: "cover",
         backgroundAttachment: "fixed",

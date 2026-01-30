@@ -2,7 +2,7 @@ import { Canvas, useFrame } from "@react-three/fiber";
 import HeroText from "../components/HeroText";
 import ParallaxBackground from "../components/parallaxBackground";
 import { Astronaut } from "../components/Astronaut";
-import { Float } from "@react-three/drei";
+import { Float, AdaptiveDpr, AdaptiveEvents } from "@react-three/drei";
 import { useMediaQuery } from "react-responsive";
 import { easing } from "maath";
 import { Suspense } from "react";
@@ -17,7 +17,11 @@ const Hero = () => {
         className="absolute inset-0"
         style={{ width: "100vw", height: "100vh" }}
       >
-        <Canvas camera={{ position: [0, 1, 3] }}>
+        <Canvas
+          camera={{ position: [0, 1, 3] }}
+          dpr={[1, 2]} // Performance optimization: limit resolution on high-DPI screens if needed
+          gl={{ antialias: false, powerPreference: "high-performance" }} // Faster rendering
+        >
           <Suspense fallback={null}>
             <Float>
               <Astronaut
@@ -26,12 +30,15 @@ const Hero = () => {
               />
             </Float>
             <Rig />
+            <AdaptiveDpr pixelated={false} />
+            <AdaptiveEvents />
           </Suspense>
         </Canvas>
       </figure>
     </section>
   );
 };
+
 
 function Rig() {
   return useFrame((state, delta) => {

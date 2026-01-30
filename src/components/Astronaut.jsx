@@ -16,7 +16,7 @@ import PropTypes from "prop-types";
 export function Astronaut(props) {
   const group = useRef();
   const { nodes, materials, animations } = useGLTF(
-    "/models/tenhun_falling_spaceman_fanart.glb"
+    "/models/spaceman_web.glb"
   );
   const { actions } = useAnimations(animations, group);
   useEffect(() => {
@@ -134,6 +134,4 @@ Astronaut.propTypes = {
   position: PropTypes.arrayOf(PropTypes.number),
 };
 
-useGLTF.preload("/models/tenhun_falling_spaceman_fanart.glb");
-
-useGLTF.preload("/models/tenhun_falling_spaceman_fanart.glb");
+useGLTF.preload("/models/spaceman_web.glb");

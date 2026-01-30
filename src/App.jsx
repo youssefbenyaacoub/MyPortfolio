@@ -1,14 +1,18 @@
-import { useState } from "react";
+import { useState, lazy, Suspense } from "react";
 import Navbar from "./sections/Navbar";
 import Hero from "./sections/Hero";
-import About from "./sections/About";
-import Projects from "./sections/Projects";
-import Experiences from "./sections/Experiences";
-import Testimonial from "./sections/Testimonial";
-import Contact from "./sections/Contact";
-import Footer from './sections/Footer';
 import { SpeedInsights } from "@vercel/speed-insights/react";
 import SplashScreen from "./components/SplashScreen";
+
+// Lazy load heavy components
+const About = lazy(() => import("./sections/About"));
+const Projects = lazy(() => import("./sections/Projects"));
+const Experiences = lazy(() => import("./sections/Experiences"));
+const Testimonial = lazy(() => import("./sections/Testimonial"));
+const Contact = lazy(() => import("./sections/Contact"));
+const Footer = lazy(() => import("./sections/Footer"));
+
+const LoadingFallback = () => <div className="h-20" />; // Placeholder for lazy loaded items
 
 const App = () => {
   const [showSplash, setShowSplash] = useState(true);
@@ -23,12 +27,14 @@ const App = () => {
       <div className="container mx-auto max-w-7xl scroll-smooth">
         <Navbar />
         <Hero />
-        <About />
-        <Projects />
-        <Experiences />
-        <Testimonial />
-        <Contact />
-        <Footer/>
+        <Suspense fallback={<LoadingFallback />}>
+          <About />
+          <Projects />
+          <Experiences />
+          <Testimonial />
+          <Contact />
+          <Footer />
+        </Suspense>
       </div>
       <SpeedInsights />
     </>
@@ -36,3 +42,4 @@ const App = () => {
 };
 
 export default App;
+
