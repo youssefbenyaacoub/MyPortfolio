@@ -12,7 +12,7 @@ export const myProjects = [
   ],
   href: "https://github.com/youssefbenyaacoub/joker-esen-.git",
   logo: "",
-  image: "/assets/projects/joker.png",
+  image: "/assets/projects/joker.avif",
   tags: [
     {
       id: 1,
@@ -52,7 +52,7 @@ export const myProjects = [
   ],
   href: "https://github.com/youssefbenyaacoub/Gestion-des-Ticket.git",
   logo: "",
-  image: "/assets/projects/ticket.png",
+  image: "/assets/projects/ticket.avif",
   tags: [
     {
       id: 1,
@@ -92,7 +92,7 @@ export const myProjects = [
   ],
   href: "https://github.com/youssefbenyaacoub/Gestion-Rh.git",
   logo: "",
-  image: "/assets/projects/rh.png",
+  image: "/assets/projects/rh.avif",
   tags: [
     {
       id: 1,
@@ -136,7 +136,7 @@ export const myProjects = [
 ],
   href: "https://github.com/youssefbenyaacoub/benyaacoub-shop.git",
   logo: "",
-  image: "/assets/projects/shop.png",
+  image: "/assets/projects/shop.avif",
   tags: [
     {
       id: 1,
